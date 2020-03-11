@@ -1,0 +1,24 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b88963f..0fa119a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -264,6 +264,7 @@ message(STATUS "Compiling with support for: ${apilist}")
+ string(REPLACE ";" " " req "${PKGCONFIG_REQUIRES}")
+ string(REPLACE ";" " " api "${API_DEFS}")
+ set(prefix ${CMAKE_INSTALL_PREFIX})
++set(libdir ${CMAKE_INSTALL_LIBDIR})
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/rtaudio.pc.in" "rtaudio.pc" @ONLY)
+ 
+ # Add install rule.
+diff --git a/rtaudio.pc.in b/rtaudio.pc.in
+index 0e81090..1aa3654 100644
+--- a/rtaudio.pc.in
++++ b/rtaudio.pc.in
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}/@libdir@
+ includedir=${prefix}/include/rtaudio        
+ 
+ Name: librtaudio
