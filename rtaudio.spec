@@ -22,7 +22,9 @@ A set of C++ classes that provide a common API for realtime audio input/output
 for Linux (native ALSA, JACK, PulseAudio and OSS)
 
 %files
-%dir %{_libdir}/
+%dir %{_libdir}
+%{_libdir}/librtaudio.so
+%{_libdir}/librtaudio.so.*
 
 %doc LICENSE
 
@@ -30,16 +32,16 @@ for Linux (native ALSA, JACK, PulseAudio and OSS)
 Summary:	Development files for %{name}
 Group:		Development/Audio
 Provides:	librtaudio-devel = %{EVRD}
+Requires:	rtaudio = %{EVRD}
 
 %description devel
-Development files for %{name}.
+Development files for %{name}
 
 %files devel
-%{_libdir}/*
 %{_includedir}/*.h
 %{_libdir}/pkgconfig/*
 %{_datadir}/%{name}/*.cmake
-%doc
+%doc doc/html/
 
 #--------------------------------------------------------------------
 
@@ -49,7 +51,7 @@ Development files for %{name}.
 
 %build
 %cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} -DCMAKE_INSTALL_LIBDIR=%{_libdir}
-#cd %{_builddir}/rtaudio-5.1.0/build/
+
 %make_build
 
 cd %{_builddir}/%{name}-%{version}/doc/doxygen; doxygen  Doxyfile.in
