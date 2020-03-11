@@ -22,7 +22,6 @@ A set of C++ classes that provide a common API for realtime audio input/output
 for Linux (native ALSA, JACK, PulseAudio and OSS)
 
 %files
-%dir %{_libdir}
 %{_libdir}/librtaudio.so
 %{_libdir}/librtaudio.so.*
 
