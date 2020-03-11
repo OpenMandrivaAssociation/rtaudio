@@ -16,6 +16,7 @@ BuildRequires:	pkgconfig(libpulse-simple)
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(jack)
 BuildRequires:	doxygen
+BuildRequires:	cmake
 
 %description
 A set of C++ classes that provide a common API for realtime audio input/output 
