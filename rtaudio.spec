@@ -4,8 +4,8 @@
 
 Summary:	Realttime audio	
 Name:		rtaudio
-Version:	200311
-Release:	2
+Version:	5.1.0
+Release:	1
 License:	MIT
 Group:		Audio
 Url:		https://www.music.mcgill.ca/~gary/rtaudio/
@@ -26,7 +26,7 @@ for Linux (native ALSA, JACK, PulseAudio and OSS)
 %{_libdir}/librtaudio.so
 %{_libdir}/librtaudio.so.*
 
-%doc LICENSE
+%doc README.md
 
 %package devel
 Summary:	Development files for %{name}
