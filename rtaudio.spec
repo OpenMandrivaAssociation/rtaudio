@@ -5,7 +5,7 @@
 Summary:	Realttime audio	
 Name:		rtaudio
 Version:	5.1.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Audio
 Url:		https://www.music.mcgill.ca/~gary/rtaudio/
@@ -23,8 +23,8 @@ A set of C++ classes that provide a common API for realtime audio input/output
 for Linux (native ALSA, JACK, PulseAudio and OSS)
 
 %files
-%{_libdir}/librtaudio.so
 %{_libdir}/librtaudio.so.*
+
 
 %doc README.md
 
@@ -38,7 +38,9 @@ Requires:	rtaudio = %{EVRD}
 Development files for %{name}
 
 %files devel
+%{_includedir}/%{name}/*.h
 %{_includedir}/*.h
+%{_libdir}/librtaudio.so
 %{_libdir}/pkgconfig/*
 %{_datadir}/%{name}/*.cmake
 %doc doc/html/
@@ -58,8 +60,9 @@ cd %{_builddir}/%{name}-%{version}/doc/doxygen; doxygen  Doxyfile.in
 
 
 %install
-#mkdir -p %{buildroot}%{_includedir}/rtaudio
-#cp *.h %{buildroot}%{_includedir}/rtaudio/
+mkdir -p %{buildroot}%{_includedir}/rtaudio
+cp RtAudio.h %{buildroot}%{_includedir}/rtaudio/
+cp rtaudio_c.h %{buildroot}%{_includedir}/rtaudio/
 
 %make_install -C build
-
+#mv RtAudio.h %{buildroot}%{_includedir}/rtaudio/
