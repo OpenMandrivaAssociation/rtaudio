@@ -39,7 +39,7 @@ Development files for %{name}
 
 %files devel
 %{_includedir}/%{name}/*.h
-%{_includedir}/*.h
+#{_includedir}/*.h
 %{_libdir}/librtaudio.so
 %{_libdir}/pkgconfig/*
 %{_datadir}/%{name}/*.cmake
