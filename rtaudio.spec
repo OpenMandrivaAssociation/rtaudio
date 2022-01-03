@@ -10,7 +10,7 @@ License:	MIT
 Group:		Audio
 Url:		https://www.music.mcgill.ca/~gary/rtaudio/
 Source0:	http://www.music.mcgill.ca/~gary/%{name}/release/%{name}-%{version}.tar.gz
-Patch0:		fix_cmake_install_paths.patch
+3Patch0:		fix_cmake_install_paths.patch
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-simple)
 BuildRequires:	pkgconfig(alsa)
