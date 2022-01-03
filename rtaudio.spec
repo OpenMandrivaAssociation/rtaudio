@@ -4,13 +4,13 @@
 
 Summary:	Realttime audio	
 Name:		rtaudio
-Version:	5.1.0
-Release:	2
+Version:	5.2.0
+Release:	1
 License:	MIT
 Group:		Audio
 Url:		https://www.music.mcgill.ca/~gary/rtaudio/
 Source0:	http://www.music.mcgill.ca/~gary/%{name}/release/%{name}-%{version}.tar.gz
-Patch0:		fix_cmake_install_paths.patch
+#Patch0:		fix_cmake_install_paths.patch
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libpulse-simple)
 BuildRequires:	pkgconfig(alsa)
@@ -39,7 +39,7 @@ Development files for %{name}
 
 %files devel
 %{_includedir}/%{name}/*.h
-%{_includedir}/*.h
+#{_includedir}/*.h
 %{_libdir}/librtaudio.so
 %{_libdir}/pkgconfig/*
 %{_datadir}/%{name}/*.cmake
@@ -55,8 +55,6 @@ Development files for %{name}
 %cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} -DCMAKE_INSTALL_LIBDIR=%{_libdir}
 
 %make_build
-
-cd %{_builddir}/%{name}-%{version}/doc/doxygen; doxygen  Doxyfile.in
 
 
 %install
