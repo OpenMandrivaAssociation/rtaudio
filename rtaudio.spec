@@ -56,8 +56,6 @@ Development files for %{name}
 
 %make_build
 
-cd %{_builddir}/%{name}-%{version}/doc/doxygen; doxygen  Doxyfile.in
-
 
 %install
 mkdir -p %{buildroot}%{_includedir}/rtaudio
