@@ -5,7 +5,7 @@
 Summary:	Realttime audio	
 Name:		rtaudio
 Version:	5.2.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Audio
 Url:		https://www.music.mcgill.ca/~gary/rtaudio/
